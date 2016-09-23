@@ -2,5 +2,7 @@
 
 Series of react-tutorials.
 
-1. Set up webpack with webpack dev server
-2. Components folder which deals with modularized file structure with this.props
+1. Components Folder
+-Webpack w dev server, created series of components and modularized file structure.
+-use of JSX with ES6
+-use of this.props passing from parent to child components.
