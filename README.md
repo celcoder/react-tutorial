@@ -1,7 +1,7 @@
 # react-tutorial
 Series of react-tutorials.
 
-Components Folder:
+I Components Folder:
 
 1.Webpack w dev server, created series of components and modularized file structure. 
 
@@ -18,6 +18,7 @@ Components Folder:
 7.Inline styling.
 
 
-Architecting Components Folder:
+
+II Architecting Components Folder:
 
 1.added built in Proptypes.
