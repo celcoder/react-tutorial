@@ -1,8 +1,8 @@
 # react-tutorial
-
 Series of react-tutorials.
 
 Components Folder:
+
 1.Webpack w dev server, created series of components and modularized file structure. 
 
 2.use of JSX with ES6
