@@ -2,9 +2,9 @@
 
 Series of react-tutorials.
 
-1. Components Folder
--Webpack w dev server, created series of components and modularized file structure.
--use of JSX with ES6
--use of this.props passing from parent to child components.
--use of constructor w this.state 
--use of click event handler
+Components Folder:
+1.Webpack w dev server, created series of components and modularized file structure.
+2.use of JSX with ES6
+3.use of this.props passing from parent to child components.
+4.use of constructor w this.state 
+5.use of click event handler
