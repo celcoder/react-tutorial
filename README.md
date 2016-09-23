@@ -16,3 +16,8 @@ Components Folder:
 6.added marked library to by pass XSS protection.
 
 7.Inline styling.
+
+
+Architecting Components Folder:
+
+1.added built in Proptypes.

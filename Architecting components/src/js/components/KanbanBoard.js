@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component ,PropTypes} from 'react';
 import List from './List';
 
-export default class KanbanBoard extends React.Component {
+export default class KanbanBoard extends Component {
   render() {
     return (
       <div className='app'>
@@ -12,3 +12,7 @@ export default class KanbanBoard extends React.Component {
     )
   }
 }
+
+KanbanBoard.propTypes = {
+      cards: PropTypes.arrayOf(PropTypes.object)
+};
