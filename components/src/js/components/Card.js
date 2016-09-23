@@ -1,4 +1,6 @@
 import React from 'react';
+import marked from 'marked';
+
 import CheckList from './CheckList';
 
 export default class Card extends React.Component {
@@ -19,7 +21,7 @@ export default class Card extends React.Component {
     if(this.state.showDetails) {
       cardDetails = (
         <div className="card__details">
-          {this.props.description}
+          <span dangerouslySetInnerHTML={{__html:marked(this.props.description)}}></span>
           <CheckList cardId={this.props.id} tasks={this.props.tasks} />
         </div>
       )

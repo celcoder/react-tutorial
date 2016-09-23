@@ -18,7 +18,7 @@ let cardsList = [
   {
     id: 2,
     title: 'Write some code',
-    description: 'Code along with samples in this book',
+    description: 'Code along with this tutorial. The complete source can be found at [github] (https://github.com/celcoder)',
     status: 'todo',
     tasks: [
       {
