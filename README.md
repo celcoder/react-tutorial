@@ -14,3 +14,5 @@ Components Folder:
 5.use of click event handler.
 
 6.added marked library to by pass XSS protection.
+
+7.Inline styling.
