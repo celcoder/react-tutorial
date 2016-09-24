@@ -10,5 +10,8 @@ II stateful vs stateless Folder:
 
 	example of component architecture and how to establish stateful component vs stateless.
 
+III Component LifeCycle Folder:
+
+	Introduction of Mounting components. 
 
 
