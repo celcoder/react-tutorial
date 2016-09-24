@@ -18,10 +18,3 @@ I Components Folder:
 7.Inline styling.
 
 8.added built in Proptypes.
-
-
-
-
-II stateful vs stateless Folder:
-
-example of component architure and how to establish stateful component vs stateless
