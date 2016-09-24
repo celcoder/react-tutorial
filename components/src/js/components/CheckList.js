@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
 
-export default class CheckList extends React.Component {
+export default class CheckList extends Component {
   render() {
     let tasks = this.props.tasks.map((task, i) => {
       return <li key={task.id} className='checklist__task'>
@@ -17,3 +17,8 @@ export default class CheckList extends React.Component {
     );
   }
 }
+
+CheckList.propTypes = {
+  cardId: PropTypes.number,
+  tasks: PropTypes.arrayOf(PropTypes.object)
+};

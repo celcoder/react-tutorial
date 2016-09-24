@@ -17,8 +17,4 @@ I Components Folder:
 
 7.Inline styling.
 
-
-
-II Architecting Components Folder:
-
-1.added built in Proptypes.
+8.added built in Proptypes.
