@@ -3,12 +3,12 @@ Series of react-tutorials.
 
 Stateful vs Stateless Explample
 
-The component hierarchy
+The component hierarchy:
 
--contact: main component
+	-contact: main component
 
-	-searchBar: shows an input filed so the user can filter the contacts
+		-searchBar: shows an input filed so the user can filter the contacts
 
-	-contactList: Loops through data, creating a series of contactItems
+		-contactList: Loops through data, creating a series of contactItems
 
-		-contactItem: Display the contact data
+			-contactItem: Display the contact data
