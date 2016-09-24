@@ -3,7 +3,7 @@ Series of react-tutorials.
 
 I Components Folder:
 
-	1.Webpack w dev server, created series of components and modularized file structure. 
+	1.Webpack w dev server, created series of components and modularized app structure. 
 
 	2.use of JSX with ES6.
 

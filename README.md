@@ -8,7 +8,7 @@ I Components Folder:
 
 II stateful vs stateless Folder:
 
-	example of component architure and how to establish stateful component vs stateless.
+	example of component architecture and how to establish stateful component vs stateless.
 
 
 
