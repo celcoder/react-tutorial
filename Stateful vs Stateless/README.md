@@ -12,3 +12,6 @@ The component hierarchy:
 		-contactList: Loops through data, creating a series of contactItems
 
 			-contactItem: Display the contact data
+
+
+End Result shows the data flow hierarchy of components and how to update state to reflect user input.
