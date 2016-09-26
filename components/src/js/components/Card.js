@@ -32,7 +32,7 @@ export default class Card extends Component {
       cardDetails = (
         <div className="card__details">
           <span dangerouslySetInnerHTML={{__html:marked(this.props.description)}}></span>
-          <CheckList cardId={this.props.id} tasks={this.props.tasks} />
+          <CheckList cardId={this.props.id} tasks={this.props.tasks} taskCallbacks={this.props.taskCallbacks}/>
         </div>
       )
     }
@@ -55,5 +55,6 @@ Card.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   color: PropTypes.string,
-  tasks: PropTypes.arrayOf(PropTypes.object)
+  tasks: PropTypes.arrayOf(PropTypes.object),
+  taskCallBacks: PropTypes.object
 };
