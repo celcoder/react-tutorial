@@ -1,8 +1,37 @@
 import React, {Component, PropTypes} from 'react';
+import ReactCssTransitionGroup from 'react-addons-css-transition-group';
 import marked from 'marked';
 import CheckList from './CheckList';
+import {DragSource} from 'react-dnd';
+import constants from './constants';
 
-export default class Card extends Component {
+let titlePropType = (props, propName, componentName) => {
+  if(props[propName]) {
+    let value = props[propName];
+    if(typeof value !== 'string' || value.length > 80) {
+      return new Error(
+        `${propName} in ${componentName} is longer than 80 characters`
+      );
+    } 
+  }
+}
+
+const cardDragSpec = {
+  beginDrag(props) {
+    return {
+      id: props.id
+    }
+  }
+}
+
+let collectDrag = (connect, monitor) => {
+  return {
+    connectDragSource: connect.dragSource()
+  };
+}
+
+
+class Card extends Component {
   constructor() {
     super()
     this.state = {
@@ -16,6 +45,7 @@ export default class Card extends Component {
   }
 
   render() {
+    const {connectDragSource} = this.props;
     let cardDetails;
     
     let sideColor = { 
@@ -37,14 +67,16 @@ export default class Card extends Component {
       )
     }
     
-    return (
+    return connectDragSource (
       <div className='card'>
         <div style={sideColor}>
           <div className='card__title' onClick={this.toggle.bind(this)}>
           {this.props.title}
           </div>
         </div>
-        {cardDetails}
+        <ReactCssTransitionGroup transitionName='toggle' transitionEnterTimeout={250} transitionLeaveTimeout={250}>
+          {cardDetails}
+        </ReactCssTransitionGroup>
       </div>
     )
   }
@@ -56,5 +88,9 @@ Card.propTypes = {
   description: PropTypes.string,
   color: PropTypes.string,
   tasks: PropTypes.arrayOf(PropTypes.object),
-  taskCallBacks: PropTypes.object
+  taskCallbacks: PropTypes.object,
+  cardCallbacks: PropTypes.object,
+  connectDragSource: PropTypes.func.isRequired
 };
+
+export default DragSource(constants.CARD, cardDragSpec, collectDrag)(Card);

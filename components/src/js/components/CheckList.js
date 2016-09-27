@@ -33,5 +33,5 @@ export default class CheckList extends Component {
 CheckList.propTypes = {
   cardId: PropTypes.number,
   taskCallbacks: PropTypes.object,
-  tasks: PropTypes.array,
+  tasks: PropTypes.array
 };

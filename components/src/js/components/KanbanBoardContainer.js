@@ -66,7 +66,7 @@ export default class KanbanBoardContainer extends Component {
 		//create a new object without the task
 		let nextState = update(this.state.cards, {
 			[cardIndex]: {
-				tasks: {$splice: [[taskIndex,1]]}
+				tasks: {$splice: [[taskIndex, 1]]}
 			}
 		});
 		//set the componenet state to the mutated object
@@ -120,12 +120,56 @@ export default class KanbanBoardContainer extends Component {
 		});
 	}
 
+	updateCardStatus(cardId, listId) {
+		//find the index of the card
+		let cardIndex = this.state.cards.findIndex((card) => card.id == cardId);
+		//get the current card
+		let card = this.state.cards[cardIndex];
+		//set the component state to the mutated object
+		if(card.status !== listId) {
+			this.setState(update(this.state, {
+				cards: {
+					[cardIndex] : {
+						status: {$set: listId}
+					}
+				}
+			}));
+		}
+	}
+
+	updateCardPosition(cardId, afterId) {
+		if(cardId !== afterId) {
+			//find the index of the card
+			let cardIndex = this.state.cards.findIndex((card) => card.id == cardId);
+			//get the current card
+			let card = this.state.cards[cardIndex];
+			//find the card that user is hovering over
+			let afterIndex = this.state.cards.findIndex((card) => card.id == afterId);
+			//use splice to remove the card and reinsert it into new index
+			this.setState(update(this.state, {
+				cards: {
+					$splice: [
+						[cardIndex, 1]
+						[afterIndex, 0, card]
+					]
+				}
+			})); 
+		}
+	}
+	
 	render() {
-		return (<KanbanBoard cards = {this.state.cards}
-												taskCallbacks= {{
-													toggle: this.toggleTask.bind(this),
-													delete: this.deleteTask.bind(this),
-													add: this.addTask.bind(this) }} />
+		return (
+			<KanbanBoard cards={this.state.cards}
+					taskCallbacks= {{
+						toggle: this.toggleTask.bind(this),
+						delete: this.deleteTask.bind(this),
+						add: this.addTask.bind(this) 
+					}} 
+					cardCallbacks={{
+						updateStatus: this.updateCardStatus.bind(this),
+						updatePosition: this.updateCardPosition.bind(this)
+					}}
+			/>
 		)		
 	}
 }

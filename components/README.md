@@ -19,3 +19,7 @@ I Components Folder:
 	7.Inline styling.
 
 	8.added built in Proptypes.
+
+	9.fetch http used from componentDidMount to get data from server
+
+	10. DND react-addon added to make the cards draggable.
